@@ -1433,6 +1433,9 @@ function createBtnRemove(acc, expense) {
         }
 
         createTableMonthly(currentAccount);
+        updateBalance(currentAccount);
+        updateTotalValueOfTable(currentAccount);
+        updateStatisticYearly();
         localStorage.setItem('accounts', JSON.stringify(accounts));
     });
 
@@ -1464,10 +1467,9 @@ function createBtnRemoveExpense(acc, expense) {
 
             updateBalance(acc);
             updateTotalValueOfTable(acc, currentMonth, currentYear);
+            updateStatisticYearly();
         }
 
-
-        createTablePending(currentAccount);
         localStorage.setItem('accounts', JSON.stringify(accounts));
     });
 
@@ -2102,21 +2104,29 @@ function updateStatisticYearly(year = currentDate.getUTCFullYear()) {
     const statisticMonthlyArrResult = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     for (let i = 0; i <= 11; i++) {
-        //IN (monthly)
-        let inStatistic = currentAccount.entries.filter(item => new Date(item.paymentDate).getUTCMonth() === i && new Date(item.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
+        if(currentAccount.entries.length > 0){
+            //IN (monthly)
+            let inStatistic = currentAccount.entries.filter(item => new Date(item.paymentDate).getUTCMonth() === i && new Date(item.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
 
-        statisticMonthlyArrIn[i] += inStatistic;
+            if(inStatistic) statisticMonthlyArrIn[i] += inStatistic;
+        } else {
+            for (let i = 0; i <= 11; i++) {
+                statisticMonthlyArrIn[i] = 0;
+            }
+        }
 
+        if (currentAccount.expenses.length > 0){
+            //GLOBAL OUT EXPENSES (monthly)
+            let outStatistic = currentAccount.expenses.filter(expense => new Date(expense.dueDate).getUTCMonth() === i && new Date(expense.dueDate).getUTCFullYear() === year && expense.type !== 'cc').reduce((acc, expense) => acc + expense.value, 0);
 
-        //GLOBAL OUT EXPENSES (monthly)
-        let outStatistic = currentAccount.expenses.filter(expense => new Date(expense.dueDate).getUTCMonth() === i && new Date(expense.dueDate).getUTCFullYear() === year && expense.type !== 'cc').reduce((acc, expense) => acc + expense.value, 0);
+            if(outStatistic) statisticMonthlyArrOut[i] += outStatistic;
 
-        statisticMonthlyArrOut[i] += outStatistic;
+            //OUT EXPENSES FROM CREDIT CARDS
+            let outVariableStatistic = currentAccount.expenses.filter(expense => new Date(expense.paymentDate).getUTCMonth() === i && new Date(expense.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
 
-        //OUT EXPENSES FROM CREDIT CARDS
-        let outVariableStatistic = currentAccount.expenses.filter(expense => new Date(expense.paymentDate).getUTCMonth() === i && new Date(expense.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
-
-        if (outVariableStatistic) statisticMonthlyArrOut[i] += outVariableStatistic;
+            if (outVariableStatistic) statisticMonthlyArrOut[i] += outVariableStatistic;
+        }
+        
 
         //OUT EXPENSES FROM CREDIT CARDS
         currentAccount.card.forEach(item => {
