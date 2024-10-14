@@ -1426,9 +1426,6 @@ function createBtnRemove(acc, expense) {
             //Removing fixed expense
             acc.cc.splice(acc.cc.findIndex(element => element.id === expense.id), 1);
             
-            totalMonthlyExpenses -= expense.value;
-            monthlyTotalValue.textContent = moneyFormat(totalMonthlyExpenses);
-            
             updateBalance(currentAccount);
             updateTotalValueOfTable(currentAccount);
             updateInvoice();
@@ -1468,6 +1465,9 @@ function createBtnRemoveExpense(acc, expense) {
 
             acc.expenses.splice(acc.expenses.findIndex(element => element.id === expense.id), 1);
 
+            totalMonthlyExpenses -= expense.value;
+            monthlyTotalValue.textContent = moneyFormat(totalMonthlyExpenses);
+            
             updateBalance(acc);
             updateTotalValueOfTable(acc, currentMonth, currentYear);
             updateStatisticYearly();
