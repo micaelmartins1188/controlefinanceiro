@@ -1,0 +1,42 @@
+.btn {
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--gray-dark);
+    border: 1px solid transparent;
+    color: var(--gray-light);
+    border-radius: 10px;
+    transition: .2s all ease;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    color: var(--green-light);
+    border-color: var(--green-light);
+    outline: none;
+}
+
+.btn.btn--account,
+.btn.btn--modal {
+    background-color: var(--gray-dark-3);
+}
+
+.btn.active {
+    color: var(--green-light);
+    border-color: var(--green-light);
+}
+
+.btn-close {
+    background-color: var(--gray-dark-2);
+    border: 1px solid transparent;
+    color: var(--gray-light);
+    padding: 1rem 2rem;
+}
+
+.btn-close:hover {
+    color: var(--green-light);
+    border-color: var(--green-light);
+}

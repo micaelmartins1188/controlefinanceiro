@@ -1,0 +1,16 @@
+.container-expense {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+.container-expense.hidden {
+    display: none;
+}
+
+.container-expense.container-expense--monthly.hidden,
+.container-expense.container-expense--pe.hidden {
+    display: flex;
+}

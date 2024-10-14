@@ -1,0 +1,35 @@
+.table.table--statistic td {
+    padding: 5px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.table__body.table__body--statistic tr:first-of-type {
+    color: var(--green-light);
+}
+
+.table__body.table__body--statistic tr:nth-child(2) {
+    color: var(--red-light);
+}
+
+.table__body.table__body--statistic tr:last-of-type {
+    color: var(--blue-light);
+}
+
+
+.table__head.table__head--statistic {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: var(--gray-dark-2);
+    letter-spacing: 2px;
+}
+
+.table__head.table__head--statistic th {
+    padding: 5px 10px;
+}
+
+.blur {
+    filter: blur(2px);
+}

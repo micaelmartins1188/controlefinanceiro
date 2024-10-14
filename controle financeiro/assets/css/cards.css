@@ -1,0 +1,25 @@
+.cards {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cards {
+    box-sizing: border-box;
+}
+
+.cards__content {
+    justify-content: unset;
+}
+
+.cards__content::-webkit-scrollbar {
+    background-color: var(--gray-dark);
+}
+
+.cards__content::-webkit-scrollbar-thumb {
+    background-color: var(--gray-dark-3);
+    cursor: pointer;
+}
+
+.cards__content::-webkit-scrollbar-corner {
+    background-color: var(--gray-dark);
+}

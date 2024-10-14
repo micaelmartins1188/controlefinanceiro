@@ -1,0 +1,140 @@
+criar uma paleta de cores em tempo real, no qual vai alternando o layout
+conforme a pessoa vai escolhendo as modificações a serem feitas
+
+
+oque o usuario pode modificar ?
+
+1. Texto (Cor)
+2. Background (cor de fundo)
+
+Do lado do palete de cor terá o código da cor para a pessoa copiar
+
+
+---------------------------------
+
+CONFIRMAÇÃO DE CÓDIGO PARA DELETAR CONTA
+
+//Gerando número de 1 a 9
+const number1 = Math.trunc(Math.random() * 9) + 1;
+const number2 = Math.trunc(Math.random() * 9) + 1;
+const number3 = Math.trunc(Math.random() * 9) + 1;
+const number4 = Math.trunc(Math.random() * 9) + 1;
+const numbers = `${number1}${number2}${number3}${number4}`
+const inputNumbers = `${number1}${number2}${number3}${number4}`
+console.log(inputNumbers === numbers);
+console.log(inputNumbers);
+console.log(numbers);
+
+
+
+---------------------------------
+ACCOUNTS CONTENT
+
+<div class="accounts__box">
+            <button class="accounts__btn btn active">Santander</button> <button class="accounts__btn btn accounts__btn--icon"><i class="fa-solid fa-pen-to-square accounts__icon"></i></button></div>
+
+
+
+            <span class="accounts__span">Não há nenhuma conta registrada!</span>
+
+            ----------------------------------------------------
+
+            FORM PARA REUSO GERAL
+            <form class="form ">
+            <input type="text" class="form__input" placeholder="Nome do Banco" id="">
+            <input type="text" class="form__input" placeholder="" id="">
+            <input type="number" class="form__input" placeholder="" id="">
+
+            <button class="btn btn--account" id="">cadastrar</button>
+        </form>
+
+
+
+------------------------------------------------------------------------------------------------------------
+SE CASO HOUVER UM BUG COM O CURRENT MONTH E CURRENT YEAR
+
+ENTRADA         MUDA O MÊS
+MES: 8          MES: 9          
+ANO: 2024       ANO: 2024
+
+
+
+DESPESA FIXA    MUDA MÊS
+MES: 9          MES: 10
+ANO: 2024       ANO: 2024
+
+
+solução: criar uma function switchActiveExpenseTableValue, 
+        expenseIn = false;
+        expenseFixed = false;
+        expenseVariable = false;
+        expenseCreditCard = false;
+
+//-------------------------  SWITCHING EXPENSES BOOLEAN  ---------------------------
+// IF IN TRUE => Vai mexer somente nos valores totais da tabela de entrada
+//
+function switchActiveExpenseTableValue(value) {
+    if(value === 'in') {
+        expenseIn = !expenseIn
+        expenseFixed = false;
+        expenseVariable = false;
+        expenseCreditCard = false;
+    } else if(value === 'fixed') {
+        expenseIn = false;
+        expenseFixed = !expenseFixed;
+        expenseVariable = false;
+        expenseCreditCard = false;
+    } else if(value === 'variable') {
+        expenseIn = false;
+        expenseFixed = false;
+        expenseVariable = !expenseVariable;
+        expenseCreditCard = false;
+    } else {
+        expenseIn = false;
+        expenseFixed = false;
+        expenseVariable = false;
+        expenseCreditCard = !expenseCreditCard;
+    }
+}
+
+
+Dessa forma só poderá fazer alteração do valor total da tabela de uma determinada
+despesa SE ela for true, ex: se você tiver mexendo na tabela de entrada então 
+apenas a variavel expenseIn ficara true e as variaveis globais currentMonth e currentYear
+só vai sofrer alteração na pesquisa da tabela de entrada, e as outras não irão mudar 
+porque são falsas
+
+---------------------------------------------------------------------------------------------------
+
+não irá precisar, porque sempre que clicar no card para escolher pix, entrada, despesa fixa.....
+currentMonth será '' e currentYear = ''
+
+portanto entre no cards.forEach e deixe vazio essas duas variaveis caso der problema
+
+
+
+Faz o primeiro é mais seguro
+
+--------------------------------------------------------
+QUANDO TROCA DE CONTA DO BANCO OS DADOS ANTERIORES FICAM SALVOS
+
+TEM QUE CRIAR UMA FUNÇÃO LIMPAR TUDO, PARA FORMATAR OS VALORES PARA ZERO
+
+
+
+
+*//ENTRADA
+if (acc.entries.length > 0) {
+        const sumIn = acc.entries.filter(item => item.received && new Date(item.paymentDate).getUTCFullYear() === new Date().getUTCFullYear()).reduce((acc, item) => {
+            return acc + item.value;
+        }, 0);
+
+
+
+
+
+        currentAccount.expenses[0].paid === 0 ? currentAccount.expenses[0].paid = 1 : currentAccount.expenses[0].paid = 0;
+
+        
+        
+        

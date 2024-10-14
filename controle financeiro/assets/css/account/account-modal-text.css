@@ -1,0 +1,8 @@
+.account__modal-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    padding: 2rem;
+    line-height: 1.5;
+    color: var(--red-light-2);
+}

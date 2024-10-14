@@ -1,0 +1,13 @@
+.expense__thead {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--gray-dark-3);
+    position: sticky;
+    top: 0;
+}
+
+.expense__thead th {
+    padding: 10px 20px;
+}
+

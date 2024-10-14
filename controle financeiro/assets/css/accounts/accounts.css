@@ -1,0 +1,9 @@
+.accounts,
+.cards {
+    padding: 4rem;
+    background-color: var(--gray-dark-2);
+}
+
+.cards {
+    border-radius: 8px;
+}

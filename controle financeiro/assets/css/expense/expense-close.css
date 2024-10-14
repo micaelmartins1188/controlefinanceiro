@@ -1,0 +1,10 @@
+.expense__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2.754rem;
+}
+
+.expense__close:hover {
+    cursor: pointer;
+}

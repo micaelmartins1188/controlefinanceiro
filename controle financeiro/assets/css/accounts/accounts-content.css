@@ -1,0 +1,20 @@
+.accounts__content,
+.cards__content {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding: 1rem;
+}
+
+.accounts__content::-webkit-scrollbar {
+    background-color: var(--gray-dark);
+}
+
+.accounts__content::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light-4);
+    cursor: pointer;
+}
+
+.accounts__content::-webkit-scrollbar-corner {
+    background-color: var(--gray-dark);
+}

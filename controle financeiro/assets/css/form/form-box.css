@@ -1,0 +1,38 @@
+.form__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__box.form__box--radio {
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--gray-dark-3);
+    padding: 2rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: auto;
+    gap: 2rem;
+    word-break: keep-all;
+    justify-content: space-around;
+    letter-spacing: 1px;
+}
+
+.form__box--radio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#radio1, #radio2, #radio3 {
+    display: none;
+}
+
+.form__box--radio {
+    cursor: pointer;
+}
+
+.form__box--radio-label.radio-active {
+    color: var(--green-light);
+}

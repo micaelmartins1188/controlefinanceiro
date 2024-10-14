@@ -1,0 +1,21 @@
+.choice {
+    padding: 4rem;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: scroll;
+    background-color: var(--gray-dark-2);
+    gap: 2rem;
+}
+
+.choice::-webkit-scrollbar {
+    background-color: var(--gray-dark);
+}
+
+.choice::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light-4);
+    cursor: pointer;
+}
+
+.choice::-webkit-scrollbar-corner {
+    background-color: var(--gray-dark);
+}

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro 2.0</title>
+    <link rel="icon" href="assets/img/finance-icon.ico" type="image/x-icon">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+    <link rel="stylesheet" href="assets/css/header/header-icon.css">
+
+    <!-- ACCOUNT -->
+    <link rel="stylesheet" href="assets/css/account/account.css">
+    <link rel="stylesheet" href="assets/css/account/account-heading.css">
+    <link rel="stylesheet" href="assets/css/account/account-form.css">
+    <link rel="stylesheet" href="assets/css/account/account-input.css">
+
+    <!-- ACCOUNT MODAL -->
+    <link rel="stylesheet" href="assets/css/account/account-modal.css">
+    <link rel="stylesheet" href="assets/css/account/account-modal-btn.css">
+    <link rel="stylesheet" href="assets/css/account/account-modal-text.css">
+    <link rel="stylesheet" href="assets/css/account/account-overlay.css">
+
+    <!-- BTN -->
+    <link rel="stylesheet" href="assets/css/btn.css">
+
+    <!-- ACCOUNTS -->
+    <link rel="stylesheet" href="assets/css/accounts/accounts.css">
+    <link rel="stylesheet" href="assets/css/accounts/accounts-heading.css">
+    <link rel="stylesheet" href="assets/css/accounts/accounts-content.css">
+    <link rel="stylesheet" href="assets/css/accounts/accounts-span.css">
+    <link rel="stylesheet" href="assets/css/accounts/accounts-box.css">
+    <link rel="stylesheet" href="assets/css/accounts/accounts-btn.css">
+
+    <!-- BALANCE -->
+    <link rel="stylesheet" href="assets/css/balance/balance.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-info-box.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-info.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-info-text.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-box.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-card.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-value.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-label.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-heading.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+    <link rel="stylesheet" href="assets/css/form/form-span.css">
+
+    <!-- MODAL -->
+    <link rel="stylesheet" href="assets/css/modal/modal.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-close.css">
+
+    <!-- OVERLAY  -->
+    <link rel="stylesheet" href="assets/css/overlay.css">
+
+    <!-- STATISTICS -->
+    <link rel="stylesheet" href="assets/css/statistic/statistic.css">
+    <link rel="stylesheet" href="assets/css/statistic/statistic-heading.css">
+    <link rel="stylesheet" href="assets/css/statistic/statistic-box.css">
+
+    <!-- TABLE STATISTIC -->
+    <link rel="stylesheet" href="assets/css/table.css">
+
+    <!-- CHOICE -->
+    <link rel="stylesheet" href="assets/css/choice/choice.css">
+    <link rel="stylesheet" href="assets/css/choice/choice-card.css">
+    <link rel="stylesheet" href="assets/css/choice/choice-icon.css">
+    <link rel="stylesheet" href="assets/css/choice/choice-heading.css">
+
+    <!-- EXPENSES -->
+    <link rel="stylesheet" href="assets/css/expenses.css">
+
+    <!-- EXPENSE -->
+    <link rel="stylesheet" href="assets/css/expense/expense.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-close.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-heading.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-table.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-thead.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-tbody.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-result.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-form.css">
+    <link rel="stylesheet" href="assets/css/expense/expense-btn.css">
+
+    <!-- CONTAINER EXPENSE -->
+    <link rel="stylesheet" href="assets/css/container-expense.css">
+
+    <!-- CARDS -->
+     <link rel="stylesheet" href="assets/css/cards.css">
+
+    <!-- FILTER -->
+    <link rel="stylesheet" href="assets/css/filter/filter.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-heading.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-box.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-select.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-input.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-btn.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-span.css">
+
+    <!-- BACKUP -->
+    <link rel="stylesheet" href="assets/css/backup/backup.css">
+    <link rel="stylesheet" href="assets/css/backup/backup-input.css">
+    <link rel="stylesheet" href="assets/css/backup/backup-btn.css">
+
+    <!-- RESPONSIVE CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">Controle Financeiro 2.0 <i class="fa-solid fa-hand-holding-dollar header__icon"></i>
+        </h1>
+    </header>
+
+    <div class="account">
+        <h3 class="account__heading">cadastro de conta</h3>
+
+        <form class="form account__form">
+            <input type="text" class="form__input account__input" placeholder="Nome do Banco" id="input-bank-name">
+            <input type="text" class="form__input account__input" placeholder="Nome do Titular"
+                id="input-account-holder">
+            <input type="number" class="form__input account__input" placeholder="Saldo Inicial"
+                id="input-current-balance">
+
+            <button class="account__btn btn btn--account" id="btn-create-account">criar conta</button>
+        </form>
+
+        <div class="account__modal hidden" id="account-modal">
+            <button class="account__modal-btn" id="account-modal-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <p class="account__modal-text">Mensagem de erro de cadastro!</p>
+        </div>
+
+        <div class="account__overlay hidden" id="account-overlay"></div>
+    </div>
+
+    <div class="accounts">
+        <h3 class="accounts__heading">Contas Cadastradas</h3>
+
+        <div class="accounts__content">
+
+        </div>
+    </div>
+
+    <div class="modal modal--edit hidden" id="modal-edit-acc">
+        <button class="modal__close" id="edit-acc-close"><i class="fa-solid fa-xmark"></i></button>
+
+        <form class="form">
+            <input type="text" class="form__input hidden" readonly placeholder="ID" id="edit-input-id">
+            <input type="text" class="form__input" placeholder="Nome do Banco" id="edit-input-bank-name">
+            <input type="text" class="form__input" placeholder="Nome do Titular" id="edit-input-account-holder">
+
+            <button class="form__btn btn btn--modal" id="btn-edit-acc">alterar</button>
+            <span class="form__span form__span--delete" id="delete-acc">remover conta</span>
+        </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="balance">
+        <div class="balance__info">
+            <div class="balance__info-box">
+                <p class="balance__info-text">Banco: <span id="bank-name"></span></p>
+                <p class="balance__info-text">Titular: <span id="account-holder"></span></p>
+            </div>
+
+            <div class="balance__info-box">
+                <p class="balance__info-text" id="date">24 de janeiro de 2024</p>
+                <p class="balance__info-text" id="time">16:00:35</p>
+            </div>
+        </div>
+
+        <div class="balance__box balance__box--main">
+            <div class="balance__card balance__card--current">
+                <p class="balance__value balance__value--current" id="value-current">R$ 00,00</p>
+                <p class="balance__label">saldo atual</p>
+            </div>
+
+            <div class="balance__card balance__card--expected">
+                <p class="balance__value balance__value--expected" id="value-expected">R$ 00,00</p>
+                <p class="balance__label">saldo final previsto</p>
+            </div>
+        </div>
+
+        <div class="balance__box balance__box--secondary">
+            <div class="balance__card balance__card--in">
+                <p class="balance__value balance__value--in" id="value-in">R$ 00,00</p>
+                <p class="balance__label">entrada</p>
+            </div>
+
+            <div class="balance__card balance__card--out">
+                <p class="balance__value balance__value--out" id="value-out">R$ 00,00</p>
+                <p class="balance__label">saída</p>
+                <div class="balance__card--status balance_card--status-out" id="balance-out-status"></div>
+            </div>
+
+            <div class="balance__card balance__card--result">
+                <p class="balance__value balance__value--result" id="value-result">R$ 00,00</p>
+                <p class="balance__label">resultado</p>
+                <div class="balance__card--status balance_card--status-result" id="balance-result-status">512%</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- ESTATISTICA ANUAL -->
+    <div class="statistic">
+
+        <div class="statistic__box statistic__box--yearly">
+            <h2 class="statistic__heading">Estatística Anual</h2>
+
+            <div class="filter filter--statistic" id="filter">
+                <input class="filter__input" type="number" placeholder="ano" id="filter-statistic-year">
+
+                <!-- <button class="filter__btn">confirmar</button> -->
+            </div>
+
+            <div class="statistic__box statistic__box--table">
+                <table class="table table--statistic">
+                    <thead class="table__head table__head--statistic">
+                        <tr>
+                            <th>jan</th>
+                            <th>fev</th>
+                            <th>mar</th>
+                            <th>abr</th>
+                            <th>mai</th>
+                            <th>jun</th>
+                            <th>jul</th>
+                            <th>ago</th>
+                            <th>set</th>
+                            <th>out</th>
+                            <th>nov</th>
+                            <th>dez</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table__body table__body--statistic">
+                        <tr>
+                            <td class="statistic__td month-in month-0--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-1--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-2--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-3--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-4--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-5--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-6--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-7--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-8--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-9--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-10--in">R$ 0,00</td>
+                            <td class="statistic__td month-in month-11--in">R$ 0,00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="statistic__td month-out month-0--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-1--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-2--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-3--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-4--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-5--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-6--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-7--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-8--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-9--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-10--out">R$ 0,00</td>
+                            <td class="statistic__td month-out month-11--out">R$ 0,00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="statistic__td month-result month-0--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-1--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-2--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-3--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-4--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-5--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-6--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-7--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-8--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-9--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-10--result">R$ 0,00</td>
+                            <td class="statistic__td month-result month-11--result">R$ 0,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="statistic__box statistic__box--balance">
+                <div class="balance__box balance__box--yearly">
+                    <div class="balance__card balance__card--in">
+                        <p class="balance__value balance__value--in" id="value-in--yearly">R$ 00,00</p>
+                        <p class="balance__label">entrada</p>
+                    </div>
+
+                    <div class="balance__card balance__card--out">
+                        <p class="balance__value balance__value--out" id="value-out--yearly">R$ 00,00</p>
+                        <p class="balance__label">saída</p>
+                        <div class="balance__card--status balance_card--status-out" id="statistic-out-status"></div>
+                    </div>
+
+                    <div class="balance__card balance__card--result">
+                        <p class="balance__value balance__value--result" id="value-result--yearly">R$ 00,00</p>
+                        <p class="balance__label">resultado</p>
+                        <div class="balance__card--status balance_card--status-result" id="statistic-result-status">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="choice">
+        <div class="choice__card hidden" id="card-pix">
+            <i class="fa-brands fa-pix choice__icon"></i>
+            <h3 class="choice__heading">Pix</h3>
+        </div>
+        <div class="choice__card" id="card-incoming">
+            <i class="fa-solid fa-coins choice__icon"></i>
+            <h3 class="choice__heading">Entrada</h3>
+        </div>
+        <div class="choice__card" id="card-fixed-expense">
+            <i class="fa-solid fa-money-bills choice__icon"></i>
+            <h3 class="choice__heading">Despesa fixa</h3>
+        </div>
+        <div class="choice__card" id="card-variable-expense">
+            <i class="fa-solid fa-money-bill choice__icon"></i>
+            <h3 class="choice__heading">Despesa variável</h3>
+        </div>
+        <div class="choice__card" id="card-credit-card">
+            <i class="fa-solid fa-credit-card choice__icon"></i>
+            <h3 class="choice__heading">Cartão de Crédito</h3>
+        </div>
+    </div>
+
+    <section class="expenses">
+
+        <!-- PIX-->
+        <div class="container-expense hidden">
+
+            <div class="container-form">
+                <form class="form expense-form expense-form--responsive">
+                    <h3 class="form__heading">Cadastro de Chave pix</h3>
+                    <input type="text" class="form__input expense-form__input" placeholder="Chave pix" id="">
+
+                    <button class="btn btn--account" id="">cadastrar</button>
+                </form>
+            </div>
+
+            <div class="cards">
+                <h3 class="cards__heading">Chave pix</h3>
+
+                <div class="cards__content">
+
+                </div>
+            </div>
+
+            <div class="modal modal--edit hidden" id="modal-edit-pix">
+                <button class="modal__close" id="edit-acc-close"><i class="fa-solid fa-xmark"></i></button>
+
+                <form class="form">
+                    <input type="text" class="form__input hidden" readonly placeholder="ID" id="pix-input-id">
+                    <input type="text" readonly class="form__input" placeholder="Chave pix" id="pix-input-name">
+
+                    <button class="form__btn btn btn--modal" id="btn-remove-pix">remover</button>
+                </form>
+            </div>
+
+            <div class="expense">
+                <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button>
+                <h3 class="expense__heading"><i class="fa-brands fa-pix expense__heading--icon"></i>Transações pix</h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>status</th>
+                            <th>remover</th>
+                            <th>editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="pix-tbody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <form class="form expense-form expense-form--responsive">
+                <input type="text" class="form__input expense-form__input" placeholder="Descrição" id="">
+
+                <input type="number" class="form__input expense-form__input" placeholder="Valor" id="">
+
+                <button class="btn btn--account" id="">enviar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE IN -->
+        <div class="container-expense hidden">
+            <div class="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <div class="filter__box">
+                    <select class="filter__select" id="filter-in-month">
+                        <option value="0">jan</option>
+                        <option value="1">fev</option>
+                        <option value="2">mar</option>
+                        <option value="3">abr</option>
+                        <option value="4">mai</option>
+                        <option value="5">jun</option>
+                        <option value="6">jul</option>
+                        <option value="7">ago</option>
+                        <option value="8">set</option>
+                        <option value="9">out</option>
+                        <option value="10">nov</option>
+                        <option value="11">dez</option>
+                    </select>
+
+                    <input type="number" class="filter__input" id="filter-in-year" placeholder="ano">
+
+                    <button class="filter__btn" id="filter-in-btn">confirmar</button>
+                </div>
+            </div>
+
+            <div class="expense">
+                <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button>
+                <h3 class="expense__heading expense__heading--in"><i
+                        class="fa-solid fa-coins expense__heading--icon"></i>Entrada</h3>
+
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>Data de recebimento</th>
+                            <th>recebido ?</th>
+                            <th>remover</th>
+                            <th>editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="in-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total do mês<br>
+                        <span class="expense__result-span" id="in-total-value">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+
+            <form class="form expense-form expense-form--responsive">
+                <input type="text" class="form__input expense-form__input" placeholder="Descrição" id="in-description">
+
+                <input type="number" class="form__input expense-form__input" placeholder="Valor" id="in-value">
+
+                <label for="" class="form__label">Data de Recebimento</label>
+                <input type="date" class="form__input expense-form__input" id="in-date">
+
+                <button class="btn btn--account" id="in-btn">cadastrar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE IN EDIT -->
+        <div class="modal modal--edit hidden" id="modal-edit-in">
+            <button class="modal__close" id="edit-in-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <form class="form">
+                <input type="text" class="form__input hidden" readonly placeholder="ID" id="edit-input-in-id">
+                <input type="text" class="form__input" placeholder="Descrição" id="edit-input-in-description">
+                <input type="number" class="form__input" placeholder="Valor" id="edit-input-in-value">
+                <input type="date" class="form__input expense-form__input" id="edit-input-in-date">
+
+                <button class="form__btn btn btn--modal" id="btn-form-edit-in">alterar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE FIXED -->
+        <div class="container-expense hidden">
+            <!-- <div class="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <div class="filter__box">
+                    <select class="filter__select" id="filter-expense-fixed-month">
+                        <option value="0">jan</option>
+                        <option value="1">fev</option>
+                        <option value="2">mar</option>
+                        <option value="3">abr</option>
+                        <option value="4">mai</option>
+                        <option value="5">jun</option>
+                        <option value="6">jul</option>
+                        <option value="7">ago</option>
+                        <option value="8">set</option>
+                        <option value="9">out</option>
+                        <option value="10">nov</option>
+                        <option value="11">dez</option>
+                    </select>
+
+                    <input type="number" class="filter__input" id="filter-expense-fixed-year" placeholder="ano">
+
+                    <button class="filter__btn" id="filter-expense-fixed-btn">confirmar</button>
+                </div>
+            </div> -->
+
+            <div class="expense">
+                <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button>
+                <h3 class="expense__heading expense__heading--fe"><i
+                        class="fa-solid fa-money-bills expense__heading--icon"></i>Despesa fixa
+                </h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>Vencimento</th>
+                            <th>renovar</th>
+                            <th>remover</th>
+                            <th>editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="fixed-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total<br>
+                        <span class="expense__result-span" id="fixed-total-value">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+
+            <form class="form expense-form expense-form--responsive">
+                <input type="text" class="form__input expense-form__input" placeholder="Descrição"
+                    id="fixed-description">
+
+                <input type="number" class="form__input expense-form__input" placeholder="Valor" id="fixed-value">
+
+                <label class="form__label">Data de Vencimento</label>
+                <input type="date" class="form__input expense-form__input" placeholder="Dia de Vencimento"
+                    id="fixed-date">
+
+                <button class="btn btn--account" id="fixed-btn">cadastrar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE FIXED EDIT -->
+        <div class="modal modal--edit hidden" id="modal-edit-fe">
+            <button class="modal__close" id="edit-fe-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <form class="form">
+                <input type="text" class="form__input hidden" readonly placeholder="ID" id="edit-input-fe-id">
+                <label class="form__label">Dia do vencimento</label>
+                <input type="number" class="form__input" id="edit-input-fe-date" placeholder="Dia do vencimento">
+                <label class="form__label">Descrição</label>
+                <input type="text" class="form__input" placeholder="Descrição" id="edit-input-fe-description">
+                <label class="form__label">Valor</label>
+                <input type="number" class="form__input" placeholder="Valor" id="edit-input-fe-value">
+
+                <label class="form__label">Mudar apenas o valor:</label>
+                <div class="form__box form__box--radio">
+
+                    <div class="form__box--radio">
+                        <label for="radio1" class="form__box--radio-label radio-active">do mês atual</label>
+                        <input type="radio" name="option" value="0" id="radio1" checked>
+                    </div>
+
+                    <div class="form__box--radio">
+                        <label for="radio2" class="form__box--radio-label">dos meses subsequentes</label>
+                        <input type="radio" name="option" value="1" id="radio2">
+                    </div>
+
+                    <div class="form__box--radio">
+                        <label for="radio3" class="form__box--radio-label">ambos</label>
+                        <input type="radio" name="option" value="2" id="radio3">
+                    </div>
+
+                </div>
+
+                <button class="form__btn btn btn--modal" id="btn-form-edit-fe">alterar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE VARIABLE -->
+        <div class="container-expense hidden">
+
+            <div class="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <div class="filter__box">
+                    <select class="filter__select" id="filter-ve-month">
+                        <option value="0">jan</option>
+                        <option value="1">fev</option>
+                        <option value="2">mar</option>
+                        <option value="3">abr</option>
+                        <option value="4">mai</option>
+                        <option value="5">jun</option>
+                        <option value="6">jul</option>
+                        <option value="7">ago</option>
+                        <option value="8">set</option>
+                        <option value="9">out</option>
+                        <option value="10">nov</option>
+                        <option value="11">dez</option>
+                    </select>
+
+                    <input type="number" class="filter__input" id="filter-ve-year" placeholder="ano">
+
+                    <button class="filter__btn" id="filter-ve-btn">confirmar</button>
+                </div>
+            </div>
+
+            <div class="expense">
+                <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button>
+                <h3 class="expense__heading expense__heading--ve"><i
+                        class="fa-solid fa-money-bill expense__heading--icon"></i>Despesa
+                    variável</h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>Data de pagamento</th>
+                            <th>remover</th>
+                            <th>editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="ve-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total do mês<br>
+                        <span class="expense__result-span" id="ve-total-value">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+
+            <form class="form expense-form expense-form--responsive">
+                <input type="text" class="form__input expense-form__input" placeholder="Descrição" id="ve-description">
+
+                <input type="number" class="form__input expense-form__input" placeholder="Valor" id="ve-value">
+
+                <button class="btn btn--account" id="ve-btn">cadastrar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE VARIABLE EDIT -->
+        <div class="modal modal--edit hidden" id="modal-edit-ve">
+            <button class="modal__close" id="edit-ve-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <form class="form">
+                <input type="text" class="form__input hidden" readonly placeholder="ID" id="edit-input-ve-id">
+                <label class="form__label" for="edit-input-ve-description">Descrição</label>
+                <input type="text" class="form__input" placeholder="Descrição" id="edit-input-ve-description">
+                <label class="form__label" for="edit-input-ve-value">Valor</label>
+                <input type="number" class="form__input" placeholder="Valor" id="edit-input-ve-value">
+
+                <button class="form__btn btn btn--modal" id="btn-form-edit-ve">alterar</button>
+            </form>
+        </div>
+
+        <!-- EXPENSE CREDIT CARD -->
+        <div class="container-expense hidden">
+
+            <div class="container-form">
+                <form class="form expense-form">
+                    <h3 class="form__heading">Cadastro de Cartão</h3>
+
+                    <label class="form__label">Nome do Cartão</label>
+                    <input type="text" class="form__input expense-form__input" placeholder="Ex: hipercard, mastercard"
+                        id="input-cc-name">
+                    <label class="form__label">Vencimento do Cartão</label>
+                    <input type="date" class="form__input expense-form__input" id="input-cc-due-date">
+                    <label class="form__label">Fechamento da Fatura</label>
+                    <input type="date" class="form__input expense-form__input" id="input-cc-invoice-closing">
+
+                    <button class="btn btn--account" id="btn-create-cc">cadastrar</button>
+                </form>
+            </div>
+
+            <div class="cards">
+                <h3 class="cards__heading">Cartões</h3>
+
+                <div class="cards__content" id="cards-content">
+
+                </div>
+            </div>
+
+            <!-- <div class="modal modal--edit hidden" id="modal-edit-credit-card">
+                <button class="modal__close" id="edit-credit-card-close"><i class="fa-solid fa-xmark"></i></button>
+
+                <form class="form">
+                    <input type="text" class="form__input hidden" readonly placeholder="ID" id="credit-card-input-id">
+                    <input type="text" class="form__input" placeholder="Nome do Banco" id="credit-card-input-name">
+
+                    <button class="form__btn btn btn--modal" id="btn-edit-credit-card">alterar</button>
+                </form>
+            </div> -->
+
+            <div class="expense">
+                <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button>
+
+
+                <h3 class="expense__heading">
+                    <div class="expense__heading--box"><i
+                            class="fa-solid fa-credit-card expense__heading--icon"></i>Cartão de
+                        crédito</div><span id="cc-heading"></span>
+                </h3>
+
+
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>data da compra</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>nº de parcelas</th>
+                            <th>valor da parcela</th>
+                            <th>parcelas pagas</th>
+                            <th>status</th>
+                            <th>remover</th>
+                            <th>editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="cc-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text expense__result-text--cc">Fatura de <span
+                            id="cc-month-span"></span><br>
+                        <span class="expense__result-span" id="cc-span-total-month">R$ 0,00</span>
+                    </p>
+                    <p class="expense__result-text">Total Cartão <br>
+                        <span class="expense__result-span" id="cc-span-total-card">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+
+            <form class="form expense-form expense-form--responsive">
+                <input type="text" class="form__input expense-form__input" placeholder="Descrição"
+                    id="input-cc-description">
+
+                <input type="number" class="form__input expense-form__input" placeholder="Valor Da Parcela"
+                    id="input-cc-installment-value">
+                <input type="number" class="form__input expense-form__input" placeholder="Número De Parcelas"
+                    id="input-cc-installment-number">
+                <label class="form__label">Data da Compra</label>
+                <input type="date" class="form__input expense-form__input" id="input-cc-date">
+
+                <button class="btn btn--account" id="btn-cc">cadastrar</button>
+            </form>
+        </div>
+
+        <!-- CREDIT CARD EXPENSE INFO -->
+        <div class="modal modal--cc-info hidden" id="modal-cc-info">
+            <button class="modal__close" id="cc-info-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="expense expense--cc-info">
+                <h3 class="expense__heading">
+                    <div class="expense__heading--box"><i
+                            class="fa-solid fa-credit-card expense__heading--icon"></i>Cartão de
+                        crédito</div><span id="cc-info-heading">informações</span>
+                </h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>vencimento</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="cc-info-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total da Despesa <br>
+                        <span class="expense__result-span" id="cc-span-total-info">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPENSE CREDIT CARD MESSAGE ERROR -->
+        <div class="modal modal--error-cc hidden" id="modal-error-cc">
+            <button class="modal__close" id="error-cc-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <h3>Não é possível adicionar as despesas com a data da compra dos meses anteriores, só tem como registrar as
+                despesas com a data da compra do mês atual!</h3>
+        </div>
+
+        <!-- EXPENSE MONTHLY -->
+        <div class="container-expense container-expense--monthly">
+            <!-- <div class="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <div class="filter__box">
+                    <select class="filter__select" id="filter-expense-fixed-month">
+                        <option value="0">jan</option>
+                        <option value="1">fev</option>
+                        <option value="2">mar</option>
+                        <option value="3">abr</option>
+                        <option value="4">mai</option>
+                        <option value="5">jun</option>
+                        <option value="6">jul</option>
+                        <option value="7">ago</option>
+                        <option value="8">set</option>
+                        <option value="9">out</option>
+                        <option value="10">nov</option>
+                        <option value="11">dez</option>
+                    </select>
+
+                    <input type="number" class="filter__input" id="filter-expense-fixed-year" placeholder="ano">
+
+                    <button class="filter__btn" id="filter-expense-fixed-btn">confirmar</button>
+                </div>
+            </div> -->
+
+            <div class="expense">
+                <!-- <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button> -->
+                <h3 class="expense__heading expense__heading--monthly"><i
+                        class="fa-solid fa-money-bills expense__heading--icon"></i>Despesas
+                    Mensais
+                </h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>Vencimento</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>status</th>
+                            <th>remover</th>
+                            <th>info</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="monthly-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total<br>
+                        <span class="expense__result-span" id="monthly-total-value">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INVOICE INFO -->
+        <div class="modal modal--invoice-info hidden" id="modal-invoice-info">
+            <button class="modal__close" id="invoice-info-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="expense expense--invoice-info">
+                <h3 class="expense__heading">
+                    <div class="expense__heading--box"><i
+                            class="fa-solid fa-credit-card expense__heading--icon"></i>Cartão de
+                        crédito</div><span id="invoice-info-heading"></span>
+                </h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>vencimento</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>parcela atual</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="invoice-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total Cartão <br>
+                        <span class="expense__result-span" id="cc-span-total-invoice">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PENDING EXPENSE -->
+        <div class="container-expense container-expense--pe">
+            <!-- <div class="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <div class="filter__box">
+                    <select class="filter__select" id="filter-expense-fixed-month">
+                        <option value="0">jan</option>
+                        <option value="1">fev</option>
+                        <option value="2">mar</option>
+                        <option value="3">abr</option>
+                        <option value="4">mai</option>
+                        <option value="5">jun</option>
+                        <option value="6">jul</option>
+                        <option value="7">ago</option>
+                        <option value="8">set</option>
+                        <option value="9">out</option>
+                        <option value="10">nov</option>
+                        <option value="11">dez</option>
+                    </select>
+
+                    <input type="number" class="filter__input" id="filter-expense-fixed-year" placeholder="ano">
+
+                    <button class="filter__btn" id="filter-expense-fixed-btn">confirmar</button>
+                </div>
+            </div> -->
+
+            <div class="expense">
+                <!-- <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button> -->
+                <h3 class="expense__heading expense__heading--monthly"><i
+                        class="fa-solid fa-money-bills expense__heading--icon"></i>Despesas
+                    Pendentes
+                </h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>Vencimento</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>status</th>
+                            <th>remover</th>
+                            <th>info</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="pe-tbody">
+
+                    </tbody>
+                </table>
+
+                <div class="expense__result">
+                    <p class="expense__result-text">Total<br>
+                        <span class="expense__result-span" id="pe-total-value">R$ 0,00</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH EXPENSES -->
+        <div class="container-expense container-expense--se">
+            <div class="filter filter--expenses">
+                <div class="filter__content">
+                    <h3 class="filter__heading">Filtrar:</h3>
+
+                    <div class="filter__box">
+                        <input class="filter__input filter__input--text" type="text" id="filter-expenses-name"
+                            placeholder="nome da despesa">
+                    </div>
+
+                    <div class="filter__box">
+                        <select class="filter__select" id="filter-expenses-month">
+                            <option value="0">jan</option>
+                            <option value="1">fev</option>
+                            <option value="2">mar</option>
+                            <option value="3">abr</option>
+                            <option value="4">mai</option>
+                            <option value="5">jun</option>
+                            <option value="6">jul</option>
+                            <option value="7">ago</option>
+                            <option value="8">set</option>
+                            <option value="9">out</option>
+                            <option value="10">nov</option>
+                            <option value="11">dez</option>
+                        </select>
+
+                        <input type="number" class="filter__input" id="filter-expenses-year" placeholder="ano">
+
+                        <button class="filter__btn" id="filter-expenses-btn">confirmar</button>
+                    </div>
+                </div>
+
+                <span class="filter__span hidden" id="filter-expenses-span">não há resultados!</span>
+            </div>
+
+            <div class="expense">
+                <!-- <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button> -->
+                <h3 class="expense__heading expense__heading--monthly"><i
+                        class="fa-solid fa-money-bills expense__heading--icon"></i>Despesas Filtradas</h3>
+
+                <table class="expense__table">
+                    <thead class="expense__thead">
+                        <tr>
+                            <th>Vencimento</th>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>status</th>
+                            <th>info</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expense__tbody" id="filter-tbody">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="backup">
+        <button id="downloadButton" class="backup__btn">Fazer Backup</button>
+        <input type="file" id="fileInput" class="backup__input">
+        <button id="loadButton" class="backup__btn">Carregar</button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

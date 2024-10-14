@@ -1,0 +1,279 @@
+CARTÃO DE CRÉDITO 
+        card = [];
+
+        QUANDO CRIAR UM CARTÃO DE CRÉDITO, GUARDAR O CARTÃO ATIVO EM UMA VARIAVEL PARA DEPOIS MANIPULAR
+        if(currentAccount.card.length > 0) currentCard = currentAccount.card[0];
+
+        card.push(
+            {
+                id:
+                accountHolder:
+                name: 'hipercard'
+                cc: []
+                expenses: []
+                invoice: [(aqui ficara as faturas mensais)] 
+            }
+        )
+
+        invoice.push(
+            {
+                despesas do mes de setembro
+                
+                date:
+                expenses:
+            }
+        )
+
+    
+        if new Date(invoice.date).getUTCMonth() === new Date().getUTCMonth() {
+            
+             VAI RETORNAR UM OBJETO => GUARDAR EM UMA VARIAVEL E DEPOIS COMEÇAR AS MANIPULAÇÕES
+        const cardInvoice = invoice.find(element => new Date(element.date).getUTCMonth() === new Date().getUTCMonth());
+
+        MANIPULAR O OBJETO => cardInvoice.expenses = 
+
+        } else {
+            CRIAR UMA FATURA PARA O MÊS ATUAL
+            currentCard.invoice.push(
+                {
+                    date: data de hoje
+                    expenses: despesas do mês atual
+                }
+            )
+        }
+
+
+    
+       TOTAL CARTÃO
+
+       quando o status for 0 => somar o valor total do produto  ao total do cartão
+       quando o status for 1 => retirar o valor total do produto do total do cartão
+
+       0 => significa que ainda tem parcelas pendentes
+       1 => significa que todas as parcelas do produto já foi pago
+
+       se a compra ocorrer antes do fechamento da fatura, ela será adicionada na fatura atual
+
+
+
+        FATURA
+
+       A fatura do mes atual, será mostrada mais como um visual para a pessoa ter uma noção
+       do quanto terá de pagar na fatura do mês atual.
+
+
+       Se o dia do fechamento da fatura for dia 20, então se o dia de fechamento da fatura
+       for igual o dia atual ou maior, jogar a fatura do cartão nas despesas 
+
+        
+        TABELA CARTÃO DE CRÉDITO
+
+        Será mostrado apenas as despesas que o status não foram concluidos
+        
+        Vai haver um filtro, se a pessoa quizer ver as despesas por mês e ano,
+        concluida ou em andamento.
+
+
+        O total do cartão, quando o usuário terminar de pagar a ultima parcela da despesa do cartão,
+        a despesa irá sumir da tabela
+        
+        TOTAL DO CARTÃO
+        
+        Será apenas a soma das despesas no qual o status estiver em andamento
+
+
+        no botão de pagamento boolean, sempre irá conferir o status e atualizar a tabela de cartão de crédito
+
+
+
+
+
+        CALCULANDO AS DESPESAS DO CARTÃO DE CRÉDITO
+        currentCard.expenses.filter(item => new Date(item.dueDate).getUTCMonth() <= new Date().getUTCMonth() && item.paid === 0)
+
+
+        cada despesa vai ter que ter um idCard => referente ao cartão
+
+
+
+
+
+
+
+        sempre conferir as datas da fatura
+
+
+fazer um forEach no expenses, se tiver alguma despesa com a data que tem 
+o mês e ano atual, criar uma fatura(invoice)
+
+
+criar uma variavel com as despesas que tem o mês e ano atual
+
+se a lista estiver vazia, deixa pra lá, caso contrário criar uma invoice com essas listas (usar o spread operator)
+
+logo após, passar essa variavel para o criador de despesa do cartão
+
+no qual será uma função, que recebera o array, no proprio argumento da função será feito o spread operator
+
+passar ela para dentro de um array
+
+acessar o id do cartão, pegar o nome, criar uma despesa na tabela com o nome do cartão
+
+descrição terá o nome do cartão
+valor = a soma total de todas as despesas do array
+vencimento = data de vencimento da despesa
+
+
+
+
+
+
+
+
+
+
+fatura objeto
+
+function updateInvoice() {
+    if(currentCard) {
+	if(currentCard.invoice.length > 0) {
+		currentInvoice = currentCard.invoice[currentCard.invoice.findIndex(expense => expense.idCard === currentCard.id && new Date(expense.dueDate).getUTCMonth() === new Date().getUTCMonth() && new Date(expense.dueDate).getUTCFullYear() === new Date().getUTCFullYear())]
+		console.log(currentInvoice);
+
+		//Criar um td com o valor total de todas essas despesas, (descrição = nome do cartao, valor = valor total de todas as despesas, info = lista das despesas incluídas no cartão)
+	} 
+		
+    if(currentCard.expenses.length > 0) {
+		currentExpenses = currentCard.expenses.filter(expense => new Date(expense.dueDate).getUTCMonth() === new Date().getUTCMonth() && new Date(expense.dueDate).getUTCFullYear() === new Date().getUTCFullYear())
+		console.log(currentExpenses);
+
+		currentCard.invoice.push({
+            expenses: [...currentExpenses],
+            id: currentCard.invoice.length > 0 ? (currentCard.invoice[currentCard.invoice.length - 1]).id + 1 : 0,
+            idCard: currentCard.id,
+            invoiceClosing: currentCard.invoiceClosing
+        })
+	    };
+    }	
+}
+
+
+
+QUANDO A GENTE CRIA UM CARTÃO, TEM QUE ATUALIZAR A TABELA E LIMPAR AS VARIAVEIS currentExpenses, currentInvoice
+
+
+
+
+NA DESPESA MENSAL DO CARTÃO DE CRÉDITO
+
+SALVAR NO BOTÃO EDIT (QUE SERÁ INFORMAÇÕES DAS DESPESAS QUE CONTÊM NO CARTÃO)
+colocar no botão, dataSet card => irá conter o id do cartão (para saber qual cartão de refere);
+colocar no botão, dataSet invoice => irá conter o id da fatura (para saber qual fatura se refere);
+
+CRIAR DESEPSAS mensais
+
+
+
+
+DEPOIS ARRUMAR O FILTRO DO PESQUISAR FATURA, A DATA DO FECHAMENTO PRECISA SER MENOR QUE O DIA ATUAL
+
+EU COLOQUEI COMO MENOR OU IGUAL, ALTERAR SOMENTE PARA MENOR (<)
+
+mudar na linha de código 679, tem que aparecer uma mensagem que a despesa ja existe
+
+
+
+ASSIM QUE PAGAR UMA FATURA, TERÁ DE FAZER O CHECKSTATUS, PARA SABER SE TODAS AS PARCELAS DE UMA UNICA DESPESA JÁ FOI PAGA
+
+
+////////////////// JA FOI CORRIGIDO //////////////////////////
+SE A FATURA ESTIVER PAGA E VOCÊ ADICIONAR UMA NOVA DESPESA EM UMA FATURA QUE JÁ ESTÁ NAS DESPESAS MENSAIS, POR MOTIVOS DE ESQUECIMENTO, SAIBA QUE É NECESSÁRIO APERTAR NO BOTÃO DE PAGAMENTO PARA DEIXAR A FATURA COMO "NÃO PAGA" E DEPOIS CLIQUE NOVAMENTE NA FATURA PARA DEIXAR COMO "PAGA", DESSA FORMA IRÁ DESBUGAR O STATUS DO CARTÃO DE CREDÍTO  
+/////////////////////////////////////////////////////////////
+
+
+
+if (new Date(ccPurchaseDate).getUTCMonth() === currentDate.getUTCMonth() && new Date(ccPurchaseDate).getUTCFullYear() === currentDate.getUTCFullYear()) {}
+ else {
+            console.log('Não é possível adicionar as despesas com data da compra dos meses anteriores, só tem como registrar as despesas com a data da compra do mês atual');
+        }
+
+
+
+
+
+        function cleanCurrentAcc() {
+    const allAccountsBtn = document.querySelectorAll('.accounts__btn');
+    allAccountsBtn.forEach(btn => {
+        btn.classList.remove('active');
+    });
+}
+
+
+
+
+ccTbody.innerHTML = '';
+
+        let invoice = currentCard.expenses.filter(expense => expense.idR === item.id);
+
+        invoice.forEach(item => {
+            const list = document.createElement('tr');
+            list.innerHTML = `
+            <td>${dateFormat(item.dueDate)}</td>
+            <td>${item.description}</td>
+            <td>${moneyFormat(item.installmentValue)}</td>`;
+
+            const btn = document.createElement('button');
+            btn.classList.add('expense__btn', `${item.paid ? 'expense__btn--paid' : 'expense__btn--not-paid'}`);
+            btn.innerText = `${item.paid ? 'pago' : 'não pago'}`;
+            list.appendChild(btn);
+
+            ccTbody.appendChild(list);
+        })
+
+
+
+
+
+
+
+
+
+        function createBtnEditMonthly(expense) {
+    const btn = document.createElement('button');
+    if (expense.type === 'cc') {
+        btn.classList.add('expense__btn', 'expense__btn--info');
+        btn.innerHTML = '<i class="fa-solid fa-circle-info"></i>';
+    } else {
+        btn.classList.add('expense__btn', 'expense__btn--info');
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i>';
+    }
+
+    btn.addEventListener('click', function () {
+
+        if (expense.type === 'cc') {
+            invoiceModalInfo.classList.remove('hidden');
+
+            invoiceTbody.innerHTML = '';
+            let invoice = currentAccount.card[expense.idCard].invoice[expense.idInvoice];
+            console.log(invoice);
+
+            invoice.expenses.forEach(item => {
+                const list = document.createElement('tr');
+                list.innerHTML = `
+                <td>${dateFormat(item.dueDate)}</td>
+                <td>${item.description}</td>
+                <td>${moneyFormat(item.installmentValue)}</td>
+                <td>${item.currentInstallment}ª</td>`;
+                invoiceTbody.appendChild(list);
+            })
+
+            invoiceInfoHeading.textContent = expense.description;
+            invoiceInfoTotal.textContent = moneyFormat(invoice.value);
+
+        } else return;
+
+    });
+
+
+    return btn;
+}

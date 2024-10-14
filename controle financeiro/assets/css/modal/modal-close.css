@@ -1,0 +1,20 @@
+.modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--gray-dark-3);
+    border: 1px solid transparent;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    color: var(--gray-light);
+}
+
+.modal__close:focus,
+.modal__close:hover,
+.modal__close:active {
+    border-color: var(--green-light);
+    color: var(--green-light);
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 255, 136, .3);
+    cursor: pointer;
+}

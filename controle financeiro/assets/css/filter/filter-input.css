@@ -1,0 +1,24 @@
+.filter__input {
+    background-color: var(--gray-dark);
+    padding: 5px 10px;
+    color: var(--gray-light);
+    margin-right: 1rem;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    border: 1px solid transparent;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+}
+
+.filter__input:hover,
+.filter__input:focus {
+    border-color: var(--green-light);
+    outline: none;
+    color: var(--gray-light-2);
+}
+
+.filter__input.filter__input--text {
+    margin-bottom: 2rem;
+    width: 100%;
+}

@@ -1,0 +1,4 @@
+.accounts__box,
+.cards__box {
+    display: flex;
+}

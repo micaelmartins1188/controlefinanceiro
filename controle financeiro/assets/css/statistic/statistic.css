@@ -1,0 +1,16 @@
+.statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    border-bottom: 2px solid var(--gray-dark-2);
+}
+
+.statistic__td.blur {
+    filter: blur(2px);
+}
+
+.statistic__td.active {
+    transform: scale(1.3);
+    cursor: none;
+}

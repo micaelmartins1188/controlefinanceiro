@@ -1,0 +1,45 @@
+.modal {
+    background-color: var(--gray-dark);
+    padding: 4rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.modal--edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal--invoice-info,
+.modal--cc-info {
+    height: 100%;
+    padding: 6rem 4rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.modal--error-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal--error-cc h3 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    line-height: 1.5;
+}

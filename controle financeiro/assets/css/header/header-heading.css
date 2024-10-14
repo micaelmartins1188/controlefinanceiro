@@ -1,0 +1,7 @@
+.header__heading {
+    color: var(--green-light);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,88 @@
+.balance__card {
+    width: 200px;
+    border-radius: 8px;
+    background-color: var(--gray-dark);
+    padding: 2rem;
+    border: 1px solid transparent;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.balance__card:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.balance__card--current:active,
+.balance__card--current:hover {
+    border-color: var(--purple-light);
+}
+
+.balance__card--expected:active,
+.balance__card--expected:hover {
+    border-color: var(--orange-light);
+}
+
+.balance__card--in:active,
+.balance__card--in:hover {
+    border-color: var(--green-light);
+}
+
+.balance__card--out:active,
+.balance__card--out:hover {
+    border-color: var(--red-light);
+}
+
+.balance__card--result:active,
+.balance__card--result:hover {
+    border-color: var(--blue-light);
+}
+
+
+
+.balance__card--out:before {
+    content: '';
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 120%;
+    left: 100%;
+    border-radius: 10px;
+    transform: translate(-50%, -120%);
+    background: var(--gray-dark);
+    border: 2px solid var(--red-light-2)
+}
+
+.balance__card--result:before {
+    content: '';
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 120%;
+    left: 100%;
+    border-radius: 10px;
+    transform: translate(-50%, -120%);
+    background: var(--gray-dark);
+    border: 2px solid var(--blue-light)
+}
+
+.balance__card--status {
+    position: absolute;
+    top: 95%;
+    left: 100%;
+    transform: translate(-50%, -95%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.balance__card--status.balance_card--status-result {
+    color: var(--blue-light);
+}
+
+.balance__card--status.balance_card--status-out {
+    color: var(--red-light);
+}

@@ -1,0 +1,79 @@
+.expense__btn {
+    border: none;
+    background-color: transparent;
+    background-color: var(--gray-dark);
+    padding: 5px 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.expense__btn--not-paid,
+.expense__btn--not-received {
+    background-color: var(--red-light);
+    color: var(--gray-dark-3);
+}
+
+.expense__btn--not-paid:focus {
+    outline-color: var(--gray-dark);
+}
+
+.expense__btn--paid,
+.expense__btn--received {
+    background-color: var(--green-light);
+    color: var(--gray-dark-3);
+}
+
+.expense__btn--remove,
+.expense__btn--reajuste,
+.expense__btn--renew {
+    color: var(--gray-light-2);
+    font-size: 1.5rem;
+    transition: all .4s ease;
+}
+
+.expense__btn--remove:hover,
+.expense__btn--remove:focus {
+    outline: none;
+    color: var(--red-light);
+}
+
+.expense__btn--reajuste:hover,
+.expense__btn--reajuste:focus,
+.expense__btn--renew:hover,
+.expense__btn--renew:focus {
+    outline: none;
+    color: var(--orange-light);
+}
+
+.expense__btn--search {
+    margin: 0 .5rem;
+}
+
+.expense__btn--waiting {
+    outline: none;
+    color: var(--orange-light);
+}
+
+.expense__btn.expense__btn--done {
+    cursor: unset;
+    outline: none;
+    color: var(--green-light);
+}
+
+.expense__btn--edit,
+.expense__btn--info {
+    color: var(--gray-light-2);
+    font-size: 1.5rem;
+    transition: all .4s ease;
+}
+
+.expense__btn--edit:hover,
+.expense__btn--edit:active,
+.expense__btn--info:hover,
+.expense__btn--info:active  {
+    color: var(--blue-light);
+}

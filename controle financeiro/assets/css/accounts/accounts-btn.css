@@ -1,0 +1,37 @@
+.accounts__btn,
+.cards__btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem;
+    font-weight: normal;
+    background-color: var(--gray-dark-3);
+    text-wrap: nowrap;
+    transition: all .2s ease-in-out;
+    border-radius: 10px 0 0 10px;
+}
+
+.accounts__btn:focus,
+.accounts__btn:hover,
+.cards__btn:focus,
+.cards__btn:hover {
+    transform: scale(1.07);
+}
+
+.accounts__btn--icon,
+.cards__btn--icon {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--gray-dark-3);
+    border: 1px solid var(--gray-dark-3);
+    border-radius: 0 10px 10px 0;
+}
+
+.accounts__btn--icon:focus,
+.accounts__btn--icon:hover,
+.accounts__btn--icon:active,
+.cards__btn--icon:focus,
+.cards__btn--icon:hover,
+.cards__btn--icon:active {
+    color: var(--green-light);
+    border-color: var(--green-light);
+}

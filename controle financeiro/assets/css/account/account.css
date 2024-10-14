@@ -1,0 +1,6 @@
+.account {
+    background-color: var(--gray-dark);
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+}

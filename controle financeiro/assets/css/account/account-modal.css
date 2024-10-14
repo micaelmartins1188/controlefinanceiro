@@ -1,0 +1,16 @@
+.account__modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--gray-dark-2);
+    width: 80%;
+    box-sizing: border-box;
+    padding: 4rem;
+    z-index: 100;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, .5);
+}
+
+.account__modal.hidden {
+    display: none;
+}

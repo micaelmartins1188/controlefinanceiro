@@ -1,0 +1,28 @@
+.expense__result {
+    background-color: var(--gray-dark-2);
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    max-width: 450px;
+    border-radius: 8px;
+}
+
+.expense__result-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    background-color: var(--gray-dark-3);
+    padding: 2rem 5px;
+    border-radius: 8px;
+}
+
+.expense__result-span {
+    color: var(--green-light);
+    display: inline-block;
+    margin: 1rem 0 0;
+}
+
+.expense__result-text--cc {
+    margin-bottom: 2rem;
+}

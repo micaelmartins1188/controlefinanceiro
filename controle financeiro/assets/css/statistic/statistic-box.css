@@ -1,0 +1,25 @@
+.statistic__box--balance {
+    display: flex;
+    justify-content: center;
+}
+
+.statistic__box.statistic__box--table {
+    overflow: scroll;
+    width: 100vw;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.statistic__box--table::-webkit-scrollbar {
+    background-color: var(--gray-dark);
+}
+
+.statistic__box--table::-webkit-scrollbar-thumb {
+    background-color: var(--gray-dark-2);
+    cursor: pointer;
+}
+
+.statistic__box--table::-webkit-scrollbar-corner {
+    background-color: var(--gray-dark);
+}

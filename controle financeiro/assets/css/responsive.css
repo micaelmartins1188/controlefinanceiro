@@ -1,0 +1,115 @@
+@media screen and (min-width: 680px) {
+    .statistic__box.statistic__box--table {
+        width: 90vw;
+    }
+    
+    .balance__box {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .balance__box--main {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .balance__card.balance__card--current {
+        margin-bottom: 0;
+    }
+
+    .filter--expenses {
+        display: flex;
+        width: 80vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filter__content {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    html {
+        font-size: 62.5%;
+    }
+    .balance {
+        width: 90%;
+    }
+
+    .balance__card.balance__card--in,
+    .balance__card.balance__card--out {
+        margin-bottom: 0;
+    }
+
+    .balance__box {
+        width: 100%;
+    }
+
+    .balance__box--main {
+        justify-content: space-evenly;
+    }
+
+    .balance__box--secondary {
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .statistic__box--table::-webkit-scrollbar {
+        display: none;
+    }
+
+    .statistic__box--yearly {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table--statistic {
+        width: 100%;
+    }
+
+    .statistic__box--balance {
+        width: 100%;
+        justify-content: space-around;
+    }
+   
+    .balance__box.balance__box--yearly {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .cards {
+        width: 50%;
+    }
+
+    .accounts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .accounts__content {
+        width: 50%;
+    }
+
+    .expense-form--responsive {
+        width: 35%;
+    }
+
+    .balance__card--status {
+        top: 100%;
+    }
+
+    .balance__card--out:before {
+        width: 100px;
+    }
+
+    .balance__card--result:before {
+        width: 100px;
+    }
+}

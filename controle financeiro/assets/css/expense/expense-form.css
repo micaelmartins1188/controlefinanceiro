@@ -1,0 +1,10 @@
+.expense-form {
+    background-color: var(--gray-dark);
+    border-radius: 8px;
+    padding: 4rem;
+}
+
+.expense-form__input {
+    width: 100%;
+    box-sizing: border-box;
+}

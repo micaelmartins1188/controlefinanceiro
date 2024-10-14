@@ -1,0 +1,10 @@
+.balance__info-text {
+    line-height: 1.5;
+    font-size: 1.3547rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#time {
+    font-size: 1.8rem;
+}

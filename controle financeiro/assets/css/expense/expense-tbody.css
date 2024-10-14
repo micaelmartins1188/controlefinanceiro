@@ -1,0 +1,20 @@
+.expense__tbody tr:nth-child(odd) {
+    background-color: var(--gray-light-5);
+}
+
+.expense__tbody tr:nth-child(even) {
+    background-color: var(--gray-light);
+}
+
+.expense__tbody td {
+    padding: 5px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--gray-dark-3);
+    text-wrap: nowrap;
+}
+
+.expense__tbody tr {
+    text-align: center;
+}
