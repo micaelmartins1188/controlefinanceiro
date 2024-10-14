@@ -2157,7 +2157,7 @@ function updateStatisticYearly(year = currentDate.getUTCFullYear()) {
     document.getElementById('statistic-out-status').textContent = totalYearly[0] ? ((totalYearly[1] / totalYearly[0]) * 100).toFixed(2) + '%' : 0 + '%';
     document.getElementById('statistic-result-status').textContent = totalYearly[0] ? ((totalYearly[2] / totalYearly[0]) * 100).toFixed(2) + '%' : 0 + '%';
 }
-updateStatisticYearly();
+// updateStatisticYearly();
 
 // ------------------------- BACKUP -----------------------------
 document.getElementById('downloadButton').addEventListener('click', function () {
