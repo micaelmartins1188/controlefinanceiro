@@ -156,6 +156,9 @@ const inputCcDueDate = document.getElementById('input-cc-due-date');
 const inputCcInvoiceClosing = document.getElementById('input-cc-invoice-closing');
 const btnCreateCc = document.getElementById('btn-create-cc');
 
+inputCcDueDate.value = formatDateInput();
+inputCcInvoiceClosing.value = formatDateInput();
+
 // CREDIT CARD FORM (EXPENSE)
 const inputCcHeading = document.getElementById('cc-heading');
 const inputCcDescription = document.getElementById('input-cc-description');
@@ -2465,7 +2468,7 @@ fixedBtn.addEventListener('click', function (e) {
 
             fixedDescription.value = '';
             fixedValue.value = '';
-            fixedDate.value = '';
+            fixedDate.value = formatDateInput();
 
             // ONE YEAR REGISTER
             const currentDate = dateFormat(new Date());
@@ -2526,7 +2529,7 @@ fixedBtn.addEventListener('click', function (e) {
     } else {
         fixedDescription.value = '';
         fixedValue.value = '';
-        fixedDate.value = '';
+        fixedDate.value = formatDateInput();
     }
 })
 
@@ -2815,7 +2818,8 @@ btnCreateCc.addEventListener('click', function (e) {
 
         }
 
-        inputCcName.value = inputCcInvoiceClosing.value = inputCcInvoiceClosing.value = '';
+        inputCcName.value = '';
+        inputCcInvoiceClosing.value = inputCcInvoiceClosing.value = formatDateInput();
         createTableCc(currentCard);
         updateTotalValueOfTable(currentAccount);
 
