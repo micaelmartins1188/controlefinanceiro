@@ -1,7 +1,6 @@
 .choice {
     padding: 4rem;
     display: flex;
-    justify-content: space-around;
     overflow-x: scroll;
     background-color: var(--gray-dark-2);
     gap: 2rem;
