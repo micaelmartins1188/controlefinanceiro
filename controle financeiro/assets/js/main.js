@@ -820,6 +820,8 @@ function createBtnStatusMonthly(acc, item, pending = false) {
         if (pending) {
             const tr = btn.closest('tr');
             if (tr) tr.remove();
+            totalPendingExpenses -= item.value;
+            peTotalValue.textContent = moneyFormat(totalPendingExpenses);
         }
 
         if (item.type === 'cc') {
