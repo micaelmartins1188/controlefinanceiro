@@ -1,0 +1,19 @@
+.search {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    z-index: 1000;
+    background-color: var(--gray-light);
+    color: var(--gray-dark-3);
+    padding: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.search:hover,
+.search:active {
+    background-color: var(--gray-light-3);
+    color: var(--gray-dark-2);
+}
