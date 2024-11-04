@@ -21,6 +21,7 @@
     display: none;
 }
 
-.form__input.hidden {
+.form__input.hidden,
+.form__input.expense-form__input.hidden {
     display: none;
 }
