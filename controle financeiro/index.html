@@ -103,6 +103,9 @@
     <!-- CARDS -->
      <link rel="stylesheet" href="assets/css/cards.css">
 
+    <!-- SEARCH -->
+      <link rel="stylesheet" href="assets/css/search.css">
+    
     <!-- FILTER -->
     <link rel="stylesheet" href="assets/css/filter/filter.css">
     <link rel="stylesheet" href="assets/css/filter/filter-heading.css">
@@ -658,6 +661,11 @@
 
                 <input type="number" class="form__input expense-form__input" placeholder="Valor" id="ve-value">
 
+                <label class="form__label">Data (opcional)</label>
+                <button class="form__btn form__btn--ve" id="btn-date-ve">adicionar data</button>
+
+                <input type="date" class="form__input expense-form__input" id="input-date-ve">
+
                 <button class="btn btn--account" id="ve-btn">cadastrar</button>
             </form>
         </div>
@@ -963,63 +971,69 @@
         </div>
 
         <!-- SEARCH EXPENSES -->
-        <div class="container-expense container-expense--se">
-            <div class="filter filter--expenses">
-                <div class="filter__content">
-                    <h3 class="filter__heading">Filtrar:</h3>
+        <div class="search" id="search"><i class="fa-solid fa-magnifying-glass"></i></div>
 
-                    <div class="filter__box">
-                        <input class="filter__input filter__input--text" type="text" id="filter-expenses-name"
-                            placeholder="nome da despesa">
+         <div class="modal modal--search hidden" id="modal-search">
+            <button class="modal__close" id="search-modal-close"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="container-expense container-expense--se" id="container-expense">
+                <div class="filter filter--expenses">
+                    <div class="filter__content">
+                        <h3 class="filter__heading">Filtrar:</h3>
+    
+                        <div class="filter__box">
+                            <input class="filter__input filter__input--text" type="text" id="filter-expenses-name"
+                                placeholder="nome da despesa">
+                        </div>
+    
+                        <div class="filter__box">
+                            <select class="filter__select" id="filter-expenses-month">
+                                <option value="0">jan</option>
+                                <option value="1">fev</option>
+                                <option value="2">mar</option>
+                                <option value="3">abr</option>
+                                <option value="4">mai</option>
+                                <option value="5">jun</option>
+                                <option value="6">jul</option>
+                                <option value="7">ago</option>
+                                <option value="8">set</option>
+                                <option value="9">out</option>
+                                <option value="10">nov</option>
+                                <option value="11">dez</option>
+                            </select>
+    
+                            <input type="number" class="filter__input" id="filter-expenses-year" placeholder="ano">
+    
+                            <button class="filter__btn" id="filter-expenses-btn">confirmar</button>
+                        </div>
                     </div>
-
-                    <div class="filter__box">
-                        <select class="filter__select" id="filter-expenses-month">
-                            <option value="0">jan</option>
-                            <option value="1">fev</option>
-                            <option value="2">mar</option>
-                            <option value="3">abr</option>
-                            <option value="4">mai</option>
-                            <option value="5">jun</option>
-                            <option value="6">jul</option>
-                            <option value="7">ago</option>
-                            <option value="8">set</option>
-                            <option value="9">out</option>
-                            <option value="10">nov</option>
-                            <option value="11">dez</option>
-                        </select>
-
-                        <input type="number" class="filter__input" id="filter-expenses-year" placeholder="ano">
-
-                        <button class="filter__btn" id="filter-expenses-btn">confirmar</button>
-                    </div>
+    
+                    <span class="filter__span hidden" id="filter-expenses-span">não há resultados!</span>
                 </div>
-
-                <span class="filter__span hidden" id="filter-expenses-span">não há resultados!</span>
+    
+                <div class="expense expense--search">
+                    <!-- <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button> -->
+                    <h3 class="expense__heading expense__heading--monthly"><i
+                            class="fa-solid fa-money-bills expense__heading--icon"></i>Despesas Filtradas</h3>
+    
+                    <table class="expense__table">
+                        <thead class="expense__thead">
+                            <tr>
+                                <th>Vencimento</th>
+                                <th>descrição</th>
+                                <th>valor</th>
+                                <th>status</th>
+                                <th>info</th>
+                            </tr>
+                        </thead>
+                        <tbody class="expense__tbody" id="filter-tbody">
+    
+                        </tbody>
+                    </table>
+    
+                </div>
             </div>
-
-            <div class="expense">
-                <!-- <button class="expense__close btn-close"><i class="fa-solid fa-xmark"></i></button> -->
-                <h3 class="expense__heading expense__heading--monthly"><i
-                        class="fa-solid fa-money-bills expense__heading--icon"></i>Despesas Filtradas</h3>
-
-                <table class="expense__table">
-                    <thead class="expense__thead">
-                        <tr>
-                            <th>Vencimento</th>
-                            <th>descrição</th>
-                            <th>valor</th>
-                            <th>status</th>
-                            <th>info</th>
-                        </tr>
-                    </thead>
-                    <tbody class="expense__tbody" id="filter-tbody">
-
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
+         </div>
     </section>
 
     <div class="backup">
