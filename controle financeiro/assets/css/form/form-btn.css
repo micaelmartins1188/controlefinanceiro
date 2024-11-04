@@ -3,3 +3,20 @@
     letter-spacing: 2px;
     cursor: pointer;
 }
+
+.form__btn.form__btn--ve {
+    border: 1px solid transparent;
+    padding: 10px 25px;
+    border-radius: 8px;
+    color: var(--gray-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.form__btn.form__btn--ve:hover,
+.form__btn.form__btn--ve:active,
+.form__btn.form__btn--ve:focus {
+    outline: none;
+    border-color: var(--green-light);
+}
