@@ -20,6 +20,7 @@ let expenseVariable = false;
 let expenseCreditCard = false;
 let totalMonthlyExpenses = 0;
 let totalPendingExpenses = 0;
+let statusDateVariable = 0;
 const currentDate = new Date();
 
 
@@ -135,7 +136,10 @@ const variableTable = document.getElementById('ve-tbody');
 const variableTotal = document.getElementById('ve-total-value');
 const variableDescription = document.getElementById('ve-description');
 const variableValue = document.getElementById('ve-value');
+const variableBtnDate = document.getElementById('btn-date-ve');
+const variableDate = document.getElementById('input-date-ve');
 const variableBtn = document.getElementById('ve-btn');
+variableDate.value = formatDateInput();
 
 // FILTER VARIABLE EXPENSE
 const filterVeMonth = document.getElementById('filter-ve-month');
@@ -196,6 +200,11 @@ const ccInfoTotal = document.getElementById('cc-span-total-info');
 const peTable = document.getElementById('pe-tbody');
 const peTotalValue = document.getElementById('pe-total-value');
 
+// SEARCH
+const searchFloating = document.getElementById('search');
+const modalSearch = document.getElementById('modal-search');
+const modalSearchBtnClose = document.getElementById('search-modal-close');
+
 // FILTER EXPENSES
 const filterExpensesName = document.getElementById('filter-expenses-name');
 const filterExpensesMonth = document.getElementById('filter-expenses-month');
@@ -206,6 +215,7 @@ const filterExpensesTable = document.getElementById('filter-tbody');
 
 filterExpensesMonth.value = currentDate.getUTCMonth();
 filterExpensesYear.value = currentDate.getUTCFullYear();
+
 
 //STATISTIC YEARLY
 const inYearly = document.getElementById('value-in--yearly');
@@ -239,6 +249,10 @@ document.getElementById('cc-month-span').textContent = Intl.DateTimeFormat('pt-b
 btnCloseExpense.forEach((btn, i) => {
     btn.addEventListener('click', function () {
         containerExpense[i].classList.add('hidden');
+
+        if (i === 3) {
+            variableDate.value = formatDateInput();
+        }
     })
 })
 
@@ -817,13 +831,6 @@ function createBtnStatusMonthly(acc, item, pending = false) {
 
     btn.addEventListener('click', function () {
 
-        if (pending) {
-            const tr = btn.closest('tr');
-            if (tr) tr.remove();
-            totalPendingExpenses -= item.value;
-            peTotalValue.textContent = moneyFormat(totalPendingExpenses);
-        }
-
         if (item.type === 'cc') {
 
             if (this.classList.contains('expense__btn--not-paid')) {
@@ -848,6 +855,13 @@ function createBtnStatusMonthly(acc, item, pending = false) {
                 })
 
                 if (currentCard) createTableCc(currentCard);
+
+                if (pending) {
+                    const tr = btn.closest('tr');
+                    if (tr) tr.remove();
+                    totalPendingExpenses -= item.value;
+                    peTotalValue.textContent = moneyFormat(totalPendingExpenses);
+                }
             } else {
                 item.paid = 0;
                 let invoice = currentAccount.card[item.idCard].invoice[item.idInvoice];
@@ -882,6 +896,12 @@ function createBtnStatusMonthly(acc, item, pending = false) {
                 updateTotalValueOfTable(acc, currentMonth, currentYear);
                 updateBalance(acc);
 
+                if (pending) {
+                    const tr = btn.closest('tr');
+                    if (tr) tr.remove();
+                    totalPendingExpenses -= item.value;
+                    peTotalValue.textContent = moneyFormat(totalPendingExpenses);
+                }
                 // localStorage.setItem('accounts', JSON.stringify(accounts));
             } else {
                 item.paid = 0;
@@ -1242,13 +1262,14 @@ function createBtnEdit(expense) {
             // const dataVe = currentAccount.expenses.find(item => item.idR === expense.id && item.type === 've');
             const dataVe = currentAccount.ve.find(item => item.id === expense.id);
             currentExpense = dataVe;
-            
+
             modalEditVe.classList.remove('hidden');
+            overlay.classList.remove('hidden');
 
             inputEditVeId.value = currentExpense.id;
             inputEditVeDescription.value = currentExpense.description;
             inputEditVeValue.value = currentExpense.value;
-    
+
 
             filterExpensesTable.innerHTML = '';
             filterExpensesName.value = '';
@@ -1427,7 +1448,7 @@ function createBtnRemove(acc, expense) {
 
             //Removing fixed expense
             acc.cc.splice(acc.cc.findIndex(element => element.id === expense.id), 1);
-            
+
             updateBalance(currentAccount);
             updateTotalValueOfTable(currentAccount);
             updateInvoice();
@@ -1469,7 +1490,7 @@ function createBtnRemoveExpense(acc, expense) {
 
             totalMonthlyExpenses -= expense.value;
             monthlyTotalValue.textContent = moneyFormat(totalMonthlyExpenses);
-            
+
             updateBalance(acc);
             updateTotalValueOfTable(acc, currentMonth, currentYear);
             updateStatisticYearly();
@@ -2109,29 +2130,29 @@ function updateStatisticYearly(year = currentDate.getUTCFullYear()) {
     const statisticMonthlyArrResult = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     for (let i = 0; i <= 11; i++) {
-        if(currentAccount.entries.length > 0){
+        if (currentAccount.entries.length > 0) {
             //IN (monthly)
             let inStatistic = currentAccount.entries.filter(item => new Date(item.paymentDate).getUTCMonth() === i && new Date(item.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
 
-            if(inStatistic) statisticMonthlyArrIn[i] += inStatistic;
+            if (inStatistic) statisticMonthlyArrIn[i] += inStatistic;
         } else {
             for (let i = 0; i <= 11; i++) {
                 statisticMonthlyArrIn[i] = 0;
             }
         }
 
-        if (currentAccount.expenses.length > 0){
+        if (currentAccount.expenses.length > 0) {
             //GLOBAL OUT EXPENSES (monthly)
             let outStatistic = currentAccount.expenses.filter(expense => new Date(expense.dueDate).getUTCMonth() === i && new Date(expense.dueDate).getUTCFullYear() === year && expense.type !== 'cc').reduce((acc, expense) => acc + expense.value, 0);
 
-            if(outStatistic) statisticMonthlyArrOut[i] += outStatistic;
+            if (outStatistic) statisticMonthlyArrOut[i] += outStatistic;
 
             //OUT EXPENSES FROM CREDIT CARDS
             let outVariableStatistic = currentAccount.expenses.filter(expense => new Date(expense.paymentDate).getUTCMonth() === i && new Date(expense.paymentDate).getUTCFullYear() === year).reduce((acc, expense) => acc + expense.value, 0);
 
             if (outVariableStatistic) statisticMonthlyArrOut[i] += outVariableStatistic;
         }
-        
+
 
         //OUT EXPENSES FROM CREDIT CARDS
         currentAccount.card.forEach(item => {
@@ -2659,21 +2680,45 @@ btnModalEditFeClose.addEventListener('click', function () {
 
 //-----------------------  FORM EDIT VARIABLE ------------------------
 
+variableBtnDate.addEventListener('click', function (e) {
+    e.preventDefault();
+    variableBtnDate.blur();
+
+    variableBtnDate.getAttribute('data-status') === '0' ? variableBtnDate.setAttribute('data-status', '1') : variableBtnDate.setAttribute('data-status', '0');
+
+    statusDateVariable = +variableBtnDate.getAttribute('data-status');
+
+    if (statusDateVariable) {
+        variableDate.classList.remove('hidden')
+        variableBtnDate.textContent = 'Não adicionar data';
+    } else {
+        variableDate.classList.add('hidden');
+        variableBtnDate.textContent = 'Adicionar data';
+    }
+});
+
 variableBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (currentAccount) {
-        console.log('tudo ok');
+        // console.log('tudo ok');
         if (variableDescription.value !== '' && variableValue.value !== '') {
-
-            const date = new Date();
 
             const currentItem = {
                 description: variableDescription.value,
                 value: +variableValue.value,
                 type: 've',
                 paid: 1,
-                paymentDate: date.toISOString()
+            }
+
+            if (statusDateVariable) {
+                const date = new Date(variableDate.value);
+                if (date.getUTCMonth() <= currentDate.getUTCMonth() && date.getUTCFullYear() <= currentDate.getUTCFullYear()) {
+                    currentItem.paymentDate = date.toISOString();
+                } else return;
+
+            } else {
+                currentItem.paymentDate = currentDate.toISOString();
             }
 
             //ADDING AN ID
@@ -2686,7 +2731,7 @@ variableBtn.addEventListener('click', function (e) {
                 value: +variableValue.value,
                 type: 've',
                 paid: 1,
-                paymentDate: date.toISOString()
+                paymentDate: currentItem.paymentDate
             }
 
             currentItemExpense.idR = currentItem.id;
@@ -2695,6 +2740,8 @@ variableBtn.addEventListener('click', function (e) {
 
             variableDescription.value = '';
             variableValue.value = '';
+            variableBtnDate.textContent = 'Adicionar data';
+            variableDate.classList.add('hidden');
 
             // ------------ UPDATE INTERFACE TO THE USER -----------------------
             updateBalance(currentAccount);
@@ -2704,11 +2751,14 @@ variableBtn.addEventListener('click', function (e) {
             updateStatisticYearly();
 
             localStorage.setItem('accounts', JSON.stringify(accounts));
+            return;
         }
 
     } else {
         variableDescription.value = '';
         variableValue.value = '';
+        variableBtnDate.textContent = 'Adicionar data';
+        variableDate.classList.add('hidden');
     }
 })
 
@@ -2922,6 +2972,28 @@ spanDeleteAcc.addEventListener('click', function () {
 
     // Update the page
     window.location.reload();
+})
+
+searchFloating.addEventListener('click', function () {
+    modalSearch.classList.toggle('hidden');
+    document.getElementById('container-expense').classList.remove('hidden');
+    
+    if(!modalSearch.classList.contains('hidden')) {
+        if(filterExpensesName.value !== '') {
+            filterExpensesBtn.dispatchEvent(new Event('click'));
+        } else {
+            filterExpensesSpan.classList.add('hidden');
+        }
+    }
+})
+
+modalSearchBtnClose.addEventListener('click', function () {
+    modalSearch.classList.add('hidden');
+    filterExpensesTable.innerHTML = '';
+    filterExpensesName.value = '';
+    filterExpensesMonth.value = currentDate.getUTCMonth();
+    filterExpensesYear.value = currentDate.getUTCFullYear();
+    filterExpensesSpan.classList.add('hidden');
 })
 
 
