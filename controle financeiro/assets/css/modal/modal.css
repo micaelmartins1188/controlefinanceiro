@@ -43,3 +43,22 @@
     font-size: 2rem;
     line-height: 1.5;
 }
+
+.modal.modal--search {
+    background-color: var(--gray-dark-3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+    box-sizing: border-box;
+}
+
+.modal.modal--search > .modal__close {
+    background-color: var(--gray-dark);
+}
+
+.modal.modal--search.hidden {
+    display: none;
+}
