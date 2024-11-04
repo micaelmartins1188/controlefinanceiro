@@ -1,4 +1,5 @@
 .form__btn {
     background-color: var(--gray-dark-2);
     letter-spacing: 2px;
+    cursor: pointer;
 }
