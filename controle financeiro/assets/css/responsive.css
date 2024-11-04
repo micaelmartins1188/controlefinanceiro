@@ -112,4 +112,8 @@
     .balance__card--result:before {
         width: 100px;
     }
+
+    .filter--expenses {
+        display: unset;
+    }
 }
