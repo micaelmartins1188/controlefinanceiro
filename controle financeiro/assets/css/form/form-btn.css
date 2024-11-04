@@ -12,6 +12,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-weight: bold;
 }
 
 .form__btn.form__btn--ve:hover,
