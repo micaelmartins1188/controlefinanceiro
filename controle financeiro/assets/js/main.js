@@ -2217,7 +2217,7 @@ document.getElementById('downloadButton').addEventListener('click', function () 
         // Cria um elemento <a> para o link de download
         let a = document.createElement('a');
         a.href = url;
-        a.download = `backup-financas.json`;
+        a.download = `backup-financas-${currentDate.getUTCDate()}-${currentDate.getUTCMonth()}-${currentDate.getUTCFullYear()}.json`;
 
         // Adiciona o link ao documento
         document.body.appendChild(a);
