@@ -1033,12 +1033,14 @@ function createTableFixed(acc) {
 
 
 // ---------------------- TABLE VARIABLE ----------------------
-function createTableVariable(acc) {
+function createTableVariable(acc, month = currentDate.getUTCMonth(), year = currentDate.getUTCFullYear()) {
     variableTable.innerHTML = '';
-
+    filterVeMonth.value = month;
+    filterVeYear.value = year;
+    updateTotalValueOfTable(currentAccount, month, year);
     if (currentAccount) {
         if (acc.ve.length > 0) {
-            acc.ve.forEach(item => {
+            acc.ve.filter(item => new Date(item.paymentDate).getUTCMonth() === month && new Date(item.paymentDate).getUTCFullYear() === year).forEach(item => {
                 const list = document.createElement('tr');
                 list.dataset.id = item.id;
                 list.innerHTML = `<td>${item.description}</td>
@@ -2715,7 +2717,7 @@ variableBtn.addEventListener('click', function (e) {
 
             if (statusDateVariable) {
                 const date = new Date(variableDate.value);
-                if (date.getUTCMonth() <= currentDate.getUTCMonth() && date.getUTCFullYear() <= currentDate.getUTCFullYear()) {
+                if (date.getUTCMonth() <= currentDate.getUTCMonth() && date.getUTCFullYear() <= currentDate.getUTCFullYear() && date.getUTCDate() <= currentDate.getUTCDate()) {
                     currentItem.paymentDate = date.toISOString();
                 } else return;
 
@@ -2748,7 +2750,7 @@ variableBtn.addEventListener('click', function (e) {
             // ------------ UPDATE INTERFACE TO THE USER -----------------------
             updateBalance(currentAccount);
             updateTotalValueOfTable(currentAccount, currentMonth, currentYear);
-            createTableVariable(currentAccount);
+            createTableVariable(currentAccount, new Date(currentItemExpense.paymentDate).getUTCMonth(), new Date(currentItemExpense.paymentDate).getUTCFullYear());
             createTableMonthly(currentAccount);
             updateStatisticYearly();
 
