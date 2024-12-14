@@ -600,12 +600,14 @@ displayClock();
 
 // ---------------------- TABLE IN ----------------------
 
-function createTableIn(acc) {
+function createTableIn(acc, month = currentDate.getUTCMonth(), year = currentDate.getUTCFullYear()) {
     inTable.innerHTML = '';
-
+    filterInMonth.value = month;
+    filterInYear.value = year;
+    updateTotalValueOfTable(currentAccount, month, year);
     if (currentAccount) {
         if (acc.entries.length > 0) {
-            acc.entries.filter(item => new Date(item.paymentDate).getMonth() === new Date().getMonth()).forEach(item => {
+            acc.entries.filter(item => new Date(item.paymentDate).getUTCMonth() === month && new Date(item.paymentDate).getUTCFullYear() === year).forEach(item => {
                 const list = document.createElement('tr');
                 list.dataset.in = item.id;
                 list.innerHTML = `<td>${item.description}</td>
@@ -2393,7 +2395,7 @@ inBtn.addEventListener('click', function (e) {
             // ------------ UPDATE INTERFACE TO THE USER -----------------------
             updateBalance(currentAccount);
             updateTotalValueOfTable(currentAccount, currentMonth, currentYear);
-            createTableIn(currentAccount);
+            createTableIn(currentAccount, date.getUTCMonth(), date.getUTCFullYear());
             updateStatisticYearly();
 
             localStorage.setItem('accounts', JSON.stringify(accounts));
