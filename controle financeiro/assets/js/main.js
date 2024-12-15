@@ -410,8 +410,8 @@ function createBtnAccount(bankName, id) {
 
         // ------------ UPDATE INTERFACE TO THE USER -----------------------
         updateBalance(currentAccount);
-        updateTotalValueOfTable(currentAccount, currentMonth, currentYear);
-        createTableIn(currentAccount);
+        updateTotalValueOfTable(currentAccount, currentDate.getUTCMonth(), currentDate.getUTCFullYear());
+        hideAllContainers();
         createTableMonthly(currentAccount);
         createTablePending(currentAccount);
         updateStatisticYearly();
