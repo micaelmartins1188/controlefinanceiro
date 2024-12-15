@@ -1951,16 +1951,28 @@ function searchFilterExpenses(acc, text, month, year) {
     if (acc.expenses.length > 0) {
         currentMonth = month;
         currentYear = year;
+        let searchExpenses;
+        let searchExpensesVariable;
 
-        let searchExpenses = acc.expenses.filter(item => {
-            return new Date(item.dueDate).getUTCMonth() === month && new Date(item.dueDate).getUTCFullYear() === year && item.description.toLowerCase().includes(`${text}`);
-        });
-        // console.log(searchExpenses);
+        if(text) {
+            searchExpenses = acc.expenses.filter(item => {
+                return new Date(item.dueDate).getUTCMonth() === month && new Date(item.dueDate).getUTCFullYear() === year && item.description.toLowerCase().includes(`${text}`);
+            });
+            // console.log(searchExpenses);
 
-        let searchExpensesVariable = acc.expenses.filter(item => {
-            return new Date(item.paymentDate).getUTCMonth() === month && new Date(item.paymentDate).getUTCFullYear() === year && item.description.toLowerCase().includes(`${text}`) && item.type === 've';
-        });
+            searchExpensesVariable = acc.expenses.filter(item => {
+                return new Date(item.paymentDate).getUTCMonth() === month && new Date(item.paymentDate).getUTCFullYear() === year && item.description.toLowerCase().includes(`${text}`) && item.type === 've';
+            });
+        } else {
+            searchExpenses = acc.expenses.filter(item => {
+                return new Date(item.dueDate).getUTCMonth() === month && new Date(item.dueDate).getUTCFullYear() === year;
+            });
+            // console.log(searchExpenses);
 
+            searchExpensesVariable = acc.expenses.filter(item => {
+                return new Date(item.paymentDate).getUTCMonth() === month && new Date(item.paymentDate).getUTCFullYear() === year && item.type === 've';
+            });
+        }
 
         if (searchExpenses.length > 0 && searchExpensesVariable.length > 0) {
             filterExpensesSpan.classList.add('hidden');
@@ -3004,6 +3016,8 @@ modalSearchBtnClose.addEventListener('click', function () {
 filterExpensesBtn.addEventListener('click', function () {
     if (filterExpensesName.value !== '') {
         searchFilterExpenses(currentAccount, filterExpensesName.value.toLowerCase(), +filterExpensesMonth.value, +filterExpensesYear.value);
+    } else {
+        searchFilterExpenses(currentAccount, undefined, +filterExpensesMonth.value, +filterExpensesYear.value);
     }
 })
 
