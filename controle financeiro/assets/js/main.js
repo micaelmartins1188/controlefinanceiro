@@ -764,7 +764,7 @@ function createTableMonthly(acc) {
 
                 monthlyTable.appendChild(list);
             });
-        }
+        } else totalMonthlyExpenses = 0;
 
 
 
@@ -1158,6 +1158,7 @@ function createBtnStatusCc(acc, item) {
 function createTablePending(acc) {
     peTable.innerHTML = '';
     if (currentAccount) {
+        totalPendingExpenses = 0;
         if (acc.card.length > 0) {
             const expenseInvoiceMonthly = [];
 
@@ -1176,7 +1177,6 @@ function createTablePending(acc) {
         }
 
         if (acc.expenses.length > 0) {
-            totalPendingExpenses = 0;
 
             acc.expenses.filter(item => new Date(item.dueDate).getUTCMonth() < currentDate.getUTCMonth() && new Date(item.dueDate).getUTCFullYear() <= currentDate.getUTCFullYear() && !item.paid).forEach(item => {
                 totalPendingExpenses += item.value;
@@ -1208,7 +1208,6 @@ function createTablePending(acc) {
             });
 
         }
-
 
         peTotalValue.textContent = moneyFormat(totalPendingExpenses);
     }
